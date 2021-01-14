@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat';
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+.wrapper {
+  height: 100vh;
+  background-color: #FDFDFD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 30%;
+}
+
+.logo img {
+  max-width: 100%;
+}
+
+.url-shortner {
+  width: 100%;
+  margin-top: 25px;
+  overflow: hidden;
+}
+
+.shortner-input {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  left: 16px;
+}
+
+form {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  padding: 10px;
+  outline: none;
+  border: 2px solid #3333338a;
+  border-radius: 8px;
+  font-weight: bolder;
+  font-size: 1rem;
+  width: 33%;
+}
+
+.shorten-button {
+  outline: none;
+  background: #6C63FF;
+  padding: 12px 34px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bolder;
+  margin: 0 5px;
+  border: none;
+  transition: 0.2s all ease;
+  cursor:pointer;
+}
+
+.shorten-button:hover {
+  background:white;
+  color:#6C63FF;
+  border:1px solid #6C63FF;
+}
+
+.short-url {
+  display:block;
+  visibility: hidden;
+  padding: 18px;
+  text-align: center;
+}
+
+.short-url a {
+  color: #33333385;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+footer {
+  padding:4px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  font-weight: bold;
+  text-align: center;
+  color:black;
+}
+
+@media only screen and (max-width:786px){
+  .logo {
+    width:65%;
+  }
+  .shortner-input {
+    flex-direction: column;
+    align-items: center;
+    position:static;
+  }
+  form {
+    width: 80%;
+    align-items: center;
+    flex-direction: column;
+  }
+  input {
+    width: 80%;
+  }
+  .shorten-button {
+    max-width: 135px;
+    margin: 20px;
+  }
+}
