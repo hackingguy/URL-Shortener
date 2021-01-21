@@ -9,7 +9,7 @@
     "dotenv": "^8.2.0",
     "ejs": "~2.6.1",
     "express": "~4.17.1",
-    "http-errors": "~1.6.3",
+    "http-errors": "~1.8.0",
     "mongoose": "^5.11.11",
     "shortid": "^2.2.16",
     "valid-url": "^1.0.9"
