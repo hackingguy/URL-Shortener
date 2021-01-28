@@ -4,20 +4,18 @@ var validURI = require('valid-url');
 var shortID = require('shortid');
 var router = express.Router();
 
-/* GET users listing. */
-router.post('/shorten', async(req, res) => {
-// @POST /api/shorten
-  var longURL = req.body["longURL"];
+
+module.exports.getShortURL = async(longURL)=>{
+  console.log(longURL);
   if(validURI.isUri(longURL))
   {
     let response = await model.findOne({longURL:longURL})
     if(response){
-      res.send(
-        {
+      
+       return  {
           "response":true,
           "shortURL":response["shortURL"]
         }
-      );
     }
     else{
       let shortCode = shortID.generate();
@@ -28,22 +26,30 @@ router.post('/shorten', async(req, res) => {
         "date": new Date()
       })
       urlObject.save();
-      res.send(
-        {
+      
+      return  {
           response:true,
           shortURL:process.env.BASE_URL+"i/"+shortCode
         }
-      )
+      
     }
   }
   else
   {
-    res.send(
-      {
-        "response":false
+    
+    return  {
+        "response":false,
+        "error":"Invalid URL"
       }
-    )
   }
+}
+
+/* GET users listing. */
+router.post('/shorten', async(req, res) => {
+// @POST /api/shorten
+  var longURL = req.body["longURL"];
+  var response = await getShortURL(longURL);
+  res.send(response);
 });
 
-module.exports = router;
+module.exports.router = router;
