@@ -29,6 +29,7 @@ body {
   display: inline-block;
   width: 60px;
   height: 34px;
+  outline:none;
 }
 
 /* Hide default HTML checkbox */
