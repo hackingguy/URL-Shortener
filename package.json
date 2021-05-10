@@ -10,7 +10,7 @@
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
-    "mongoose": "^5.11.11",
+    "mongoose": "^5.12.8",
     "shortid": "^2.2.16",
     "valid-url": "^1.0.9"
   }
